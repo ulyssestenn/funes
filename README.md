@@ -1,15 +1,14 @@
 # Funes
 
-*A template for building **LLM-managed knowledge bases**.* An LLM agent — the
-"Librarian" — compiles your raw sources into an interlinked markdown wiki and
-keeps it organized. You feed it sources and ask questions; the Librarian does the
-writing, organizing, linking, and upkeep. Everything is plain markdown, viewable
-on GitHub or in any editor.
+Funes is a Git-based framework for LLM-managed knowledge work.
+
+An AI “Librarian” ingests raw sources, preserves them as an immutable record, compiles them into an interlinked Markdown wiki, and uses that wiki to produce cited reports, analyses, routines, and answers. You provide the sources and questions; the Librarian handles the writing, linking, indexing, health checks, and upkeep.
+
+Everything lives in plain Markdown inside a Git repo, so your knowledge base is versioned, diffable, portable, searchable, and usable from GitHub or any editor.
 
 The workflow is inspired by
-[Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595),
-done in a plain git repo instead of Obsidian — so your knowledge base is
-versioned, diffable, portable, and never locked into a proprietary tool.
+[Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595) idea,
+adapted for Git instead of Obsidian.
 
 ## Origin of the name
 
