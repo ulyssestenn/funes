@@ -64,7 +64,8 @@ Commit the scaffolding with a clear message and push to the working branch.
 ├── AGENTS.md        ← the Librarian's operating manual for this library
 ├── README.md        ← human-facing overview + how to use
 ├── raw/             ← verbatim source documents (immutable)
-│   └── INDEX.md     ← registry of all sources
+│   ├── INDEX.md     ← registry of all sources
+│   └── assets/      ← images and binary assets referenced by sources
 ├── wiki/            ← the compiled, interlinked knowledge base
 │   ├── INDEX.md     ← master navigation
 │   ├── sources/     ← one summary note per raw source
