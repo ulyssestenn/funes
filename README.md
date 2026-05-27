@@ -149,5 +149,4 @@ Understand why the Transformer replaced recurrence for many sequence-modeling ta
 
 ## Credits
 
-- The "LLM Knowledge Bases" idea comes from [Andrej Karpathy](https://x.com/karpathy/status/2039805659525644595).
-- Funes's concrete shape — the `raw / wiki / outputs` layout, the "Librarian" framing, and the self-improving health-check loop — was inspired by Systems Made Better's [*Build a Claude Knowledge Base That Self-Improves*](https://www.youtube.com/watch?v=ib74sLgjIBM).
+Pattern adapted from [Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595). The Librarian framing comes from Systems Made Better's [*Build a Claude Knowledge Base That Self-Improves*](https://www.youtube.com/watch?v=ib74sLgjIBM).
