@@ -16,13 +16,14 @@ adapted to live inside a git repo instead of Obsidian.
 ```
 starter-library/
 ├── AGENTS.md        ← the Librarian's operating manual (start here)
+├── README.md        ← this file — human-facing overview + how to use
 ├── raw/             ← verbatim source documents (immutable)
 │   └── INDEX.md     ← registry of all sources
 ├── wiki/            ← the compiled, interlinked knowledge base
 │   ├── INDEX.md     ← master navigation
 │   ├── sources/     ← one summary note per raw source
 │   ├── concepts/    ← atomic articles (one idea each)
-│   └── topics/      ← maps of content grouping concepts
+│   └── topics/      ← maps of related concepts
 ├── outputs/         ← generated reports / analyses (filed back when durable)
 └── meta/            ← changelog and health-check reports
 ```

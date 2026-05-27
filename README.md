@@ -31,7 +31,7 @@ The wiki is not the end product. It is the working memory the Librarian uses to 
 
 You rarely edit the wiki by hand. You supply sources and questions; the Librarian maintains the structure, links, indexes, and outputs.
 
-Here is an [example library](https://github.com/ulyssestenn/funes-example-ai) you can browse to see the type of output you can expect from Funes. 
+Here is an [example library](https://github.com/ulyssestenn/funes-example-ai) you can browse to see the type of output you can expect from Funes.
 
 ## Quick start
 
