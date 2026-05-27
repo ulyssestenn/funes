@@ -21,8 +21,9 @@ question   ─answer→ read wiki, cite articles
 
 ## Directory map
 
-- `raw/` — verbatim sources; **never edit content**. Assets in `raw/assets/`.
+- `raw/` — verbatim sources; **never edit content**.
 - `raw/INDEX.md` — source registry (id, title, type, date, status, one-liner).
+- `raw/assets/` — images and binary assets referenced by raw sources.
 - `wiki/sources/` — one summary note per source, backlinked to concepts.
 - `wiki/concepts/` — atomic articles (one idea/entity/technique each); the core.
 - `wiki/topics/` — maps of related concepts.
