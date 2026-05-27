@@ -1,8 +1,8 @@
 # Raw Source Registry
 
 Every source ingested into `raw/` is listed here. **Do not edit the content of
-raw files** — they are the immutable record. See [`../AGENTS.md`](../AGENTS.md)
-for the ingest protocol.
+raw files** — they are the immutable record. See the
+[Librarian Protocol](../../protocol.md) for the ingest workflow.
 
 | ID | Title | Type | Added | Status | Description |
 |----|-------|------|-------|--------|-------------|

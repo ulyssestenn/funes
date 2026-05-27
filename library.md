@@ -69,7 +69,7 @@ Commit the scaffolding with a clear message and push to the working branch.
 │   ├── INDEX.md     ← master navigation
 │   ├── sources/     ← one summary note per raw source
 │   ├── concepts/    ← atomic articles (one idea each)
-│   └── topics/      ← maps of content grouping concepts
+│   └── topics/      ← maps of related concepts
 ├── outputs/         ← generated reports / analyses (filed back when durable)
 └── meta/
     ├── CHANGELOG.md ← append-only log of every change the Librarian makes

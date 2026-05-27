@@ -31,7 +31,7 @@ The wiki is not the end product. It is the working memory the Librarian uses to 
 
 You rarely edit the wiki by hand. You supply sources and questions; the Librarian maintains the structure, links, indexes, and outputs.
 
-Here is an [example library](https://github.com/ulyssestenn/funes-example-ai) you can browse to see the type of output you can expect from Funes. 
+Here is an [example library](https://github.com/ulyssestenn/funes-example-ai) you can browse to see the type of output you can expect from Funes.
 
 ## Quick start
 
@@ -149,4 +149,4 @@ Understand why the Transformer replaced recurrence for many sequence-modeling ta
 
 ## Credits
 
-Pattern adapted from [Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595).
+Pattern adapted from [Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595). The Librarian framing comes from Systems Made Better's [*Build a Claude Knowledge Base That Self-Improves*](https://www.youtube.com/watch?v=ib74sLgjIBM).

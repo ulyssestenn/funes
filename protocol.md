@@ -14,7 +14,7 @@ it directly. Adapted from
 raw source ─ingest→ raw/             (verbatim, immutable)
            ─compile→ wiki/sources/   (one summary note per source)
                    → wiki/concepts/  (atomic articles, one idea each)
-                   → wiki/topics/    (maps of content grouping concepts)
+                   → wiki/topics/    (maps of related concepts)
 question   ─answer→ read wiki, cite articles
            ─output→ outputs/  →(if durable)→ filed back into wiki
 ```
@@ -25,7 +25,7 @@ question   ─answer→ read wiki, cite articles
 - `raw/INDEX.md` — source registry (id, title, type, date, status, one-liner).
 - `wiki/sources/` — one summary note per source, backlinked to concepts.
 - `wiki/concepts/` — atomic articles (one idea/entity/technique each); the core.
-- `wiki/topics/` — maps of content grouping related concepts.
+- `wiki/topics/` — maps of related concepts.
 - `wiki/INDEX.md` — master navigation.
 - `outputs/` — generated reports/analyses; file durable ones back in.
 - `meta/CHANGELOG.md` — append-only change log; `meta/health/` — dated lint reports.
