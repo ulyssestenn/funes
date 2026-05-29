@@ -149,4 +149,10 @@ Understand why the Transformer replaced recurrence for many sequence-modeling ta
 
 ## Credits
 
-Pattern adapted from [Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595). The Librarian framing comes from Systems Made Better's [*Build a Claude Knowledge Base That Self-Improves*](https://www.youtube.com/watch?v=ib74sLgjIBM).
+Funes is inspired by [Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595) and by the Librarian framing of Systems Made Better's [*Build a Claude Knowledge Base That Self-Improves*](https://www.youtube.com/watch?v=ib74sLgjIBM).
+
+## License
+
+Funes is licensed under the GNU Affero General Public License v3.0.
+
+Copyright (c) 2026 Bethany Hunt.
