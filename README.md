@@ -1,12 +1,16 @@
 # Funes
 
-Funes is a Git-based framework for turning raw sources into durable, cited knowledge work with an AI Librarian.
+Funes turns folders of raw sources into a durable, cited Markdown knowledge base maintained by an AI Librarian.
 
-The Librarian ingests raw sources, preserves them as an immutable record, compiles them into an interlinked Markdown wiki, and uses that wiki to produce cited answers, reports, analyses, routines, and other reusable outputs. You provide the sources and questions; the Librarian handles the writing, linking, indexing, health checks, and upkeep.
+Drop in PDFs, transcripts, web clips, screenshots, notes, articles, or pasted text. The Librarian preserves the raw record, compiles it into an interlinked wiki, and uses that wiki to produce cited answers, reports, reading plans, comparisons, routines, syntheses, and other reusable outputs. Built for researchers, students, and hobbyists.
 
 Everything lives in plain Markdown inside a Git repo, so your knowledge base is versioned, diffable, portable, searchable, and usable from GitHub or any editor.
 
-The workflow adapts [Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595) idea to a plain Git repo instead of Obsidian.
+Funes is not a chatbot over files. It creates a maintained knowledge library.
+
+## See it in action
+
+Here is an [example library](https://github.com/ulyssestenn/funes-example-ai) you can browse to see the type of output you can expect from Funes.
 
 ## Origin of the name
 
@@ -31,13 +35,19 @@ The wiki is not the end product. It is the working memory the Librarian uses to 
 
 You rarely edit the wiki by hand. You supply sources and questions; the Librarian maintains the structure, links, indexes, and outputs.
 
-Here is an [example library](https://github.com/ulyssestenn/funes-example-ai) you can browse to see the type of output you can expect from Funes.
+## Design
+ 
+- **Plain Git, not Obsidian or a cloud app** — your knowledge base is versioned, diffable, browsable on GitHub, and readable by any agent.
+- **Many libraries, one repo** — each top-level folder is an independent knowledge base sharing a single Librarian protocol.
+- **A three-tier wiki** — `sources/` (one summary per document), `concepts/` (one idea each), and `topics/` (maps across concepts), linked bidirectionally.
+- **An immutable raw layer** — originals are preserved verbatim and never edited; all abstraction happens in the wiki tier above.
+- **Self-maintenance built in** — an append-only changelog, dated health reports, and audits for contradictions, gaps, duplicate concepts, and stale links.
 
 ## Quick start
 
 1. **Use this repository as a template** with GitHub's “Use this template” button, or clone it.
 
-2. **Open it with an agentic coding tool** such as Claude Code, Codex, or any LLM agent that can read and edit files in a repo. The agent reads [`AGENTS.md`](./AGENTS.md) to learn how to behave as the Librarian.
+2. **Point your agentic coding tool of choice at your repo.** Use Claude Code, Codex, or any LLM agent that can read and edit files in a repo. The agent reads [`AGENTS.md`](./AGENTS.md) to learn how to behave as the Librarian.
 
 3. **Add sources.** Drop PDFs, web clips, notes, or other materials into [`starter-library/raw/`](./starter-library/raw/) and say:
 
@@ -147,12 +157,13 @@ Understand why the Transformer replaced recurrence for many sequence-modeling ta
 - Add a topic map for sequence modeling.
 ```
 
-## Credits
+## License
+
+Funes is © 2026 Bethany Hunt, licensed under the GNU Affero General Public License v3.0. You're free to use, modify, and share it; if you run it or a derivative as a network service, you must make your source available to that service's users. Commercial licensing, to use Funes inside a closed product, is available on request: bhuntdev+funes@gmail.com.
+
+
+## Acknowledgments
 
 Funes is inspired by [Andrej Karpathy's "LLM Knowledge Bases"](https://x.com/karpathy/status/2039805659525644595) and by the Librarian framing of Systems Made Better's [*Build a Claude Knowledge Base That Self-Improves*](https://www.youtube.com/watch?v=ib74sLgjIBM).
 
-## License
 
-Funes is licensed under the GNU Affero General Public License v3.0.
-
-Copyright (c) 2026 Bethany Hunt.
