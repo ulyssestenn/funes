@@ -61,6 +61,10 @@ happen. Redo the compile rather than padding it. The depth gates in
 [`tools/compile_lint.py`](./tools/compile_lint.py) catch common mechanical forms
 of these failures.
 
+Every claim in the wiki and outputs must link back to the source note or raw
+document it rests on. A source-note link is sufficient when that note links to
+the immutable raw source.
+
 **Q&A:** search the wiki first (INDEX → sources → concepts); answer with
 relative-link citations; say so plainly if it isn't covered. Write substantial
 outputs to `outputs/` and offer to file durable parts back in.
