@@ -23,3 +23,13 @@ health-check workflow, conventions, and templates.
 
 See **[`library.md`](./library.md)** for the full setup recipe — the conventions
 to confirm, the standard structure, and what a library's `AGENTS.md` must cover.
+
+## Shared tools
+
+Use [`tools/check_links.py`](./tools/check_links.py) and
+[`tools/compile_lint.py`](./tools/compile_lint.py) for the mechanical parts of a
+health check. For targeted inspection of a known public YouTube source,
+[`tools/youtube_transcript.py`](./tools/youtube_transcript.py) can retrieve
+available captions after its optional dependency is installed. See
+[`tools/README.md`](./tools/README.md) for commands, limits, and research
+standards.
