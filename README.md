@@ -59,7 +59,7 @@ You rarely edit the wiki by hand. You supply sources and questions; the Libraria
 
 4. **Ask questions.** The Librarian answers with citations into the wiki, writes substantial outputs to `outputs/`, and offers to file durable findings back into the knowledge base.
 
-5. **Keep it healthy.** Periodically ask for a “health check” to audit broken links, duplicate concepts, stale indexes, contradictions, gaps, and possible new articles.
+5. **Keep it healthy.** Periodically ask for a “health check” to audit broken links, duplicate concepts, stale indexes, contradictions, gaps, and possible new articles. The repository also runs dependency-free link and compile-depth checks in CI; see [`tools/README.md`](./tools/README.md) to run them locally.
 
 Rename or copy [`starter-library/`](./starter-library/) to suit your topic, such as `physics/`, `history/`, `research/`, or `personal-kb/`. To run several separate knowledge bases in one repo, add more top-level library folders. See [`library.md`](./library.md).
 
@@ -69,6 +69,8 @@ Rename or copy [`starter-library/`](./starter-library/) to suit your topic, such
 - **[`AGENTS.md`](./AGENTS.md)** — the entry point for agents: what each folder is and how to work in the repo.
 - **[`protocol.md`](./protocol.md)** — the shared Librarian Protocol: the full ingest → compile → Q&A → output → health-check workflow, plus conventions and article templates.
 - **[`library.md`](./library.md)** — the recipe for creating additional libraries in the same repo.
+- **[`tools/`](./tools/README.md)** — link-graph and compile-depth linters, PDF text extraction with OCR fallback, and an optional targeted YouTube transcript helper.
+- **[`.github/workflows/funes-lint.yml`](./.github/workflows/funes-lint.yml)** — CI gates for mechanical repository health.
 
 ## Example — what the Librarian produces
 

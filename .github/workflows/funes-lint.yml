@@ -1,0 +1,23 @@
+name: Funes lint
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  knowledge-base-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Check Python syntax
+        run: python3 -m py_compile tools/*.py
+      - name: Check Markdown links, orphans, and frontmatter
+        run: python3 tools/check_links.py --orphans --front
+      - name: Check compile depth
+        run: python3 tools/compile_lint.py
