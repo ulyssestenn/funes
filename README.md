@@ -33,11 +33,15 @@ question   ─answer→ read wiki, cite articles
 
 The wiki is not the end product. It is the working memory the Librarian uses to answer questions, generate reports, produce routines, notice gaps, and keep the knowledge base coherent over time.
 
+Every claim in the wiki and outputs links back to the source note or raw document it rests on.
+
 You rarely edit the wiki by hand. You supply sources and questions; the Librarian maintains the structure, links, indexes, and outputs.
 
 ## Design
  
 - **Plain Git, not Obsidian or a cloud app** — your knowledge base is versioned, diffable, browsable on GitHub, and readable by any agent.
+- **No application stack required.** Funes needs no server, vector database, embedding pipeline, or proprietary runtime. It is a repository structure, an operating protocol, and optional maintenance and extraction tools.
+- **One continuous workflow, not a menu of skills.** Ingestion, compilation, querying, synthesis, and health checking are stages of the same library lifecycle. Routine behavior lives in the shared Librarian Protocol, while deterministic operations live in tools. Users ask naturally; they do not need to remember skill names or commands.
 - **Many libraries, one repo** — each top-level folder is an independent knowledge base sharing a single Librarian protocol.
 - **A three-tier wiki** — `sources/` (one summary per document), `concepts/` (one idea each), and `topics/` (maps across concepts), linked bidirectionally.
 - **An immutable raw layer** — originals are preserved verbatim and never edited; all abstraction happens in the wiki tier above.
@@ -47,7 +51,7 @@ You rarely edit the wiki by hand. You supply sources and questions; the Libraria
 
 1. **Use this repository as a template** with GitHub's “Use this template” button, or clone it.
 
-2. **Point your agentic coding tool of choice at your repo.** Use Claude Code, Codex, or any LLM agent that can read and edit files in a repo. The agent reads [`AGENTS.md`](./AGENTS.md) to learn how to behave as the Librarian.
+2. **Point your agentic coding tool of choice at your repo.** Use Claude Code, Codex, or any LLM agent that can read and edit files in a repo. The agent reads [`AGENTS.md`](./AGENTS.md) to learn how to behave as the Librarian. If your agent does not automatically load `AGENTS.md`, tell it once: “Read `AGENTS.md` and follow `protocol.md` as the Librarian.”
 
 3. **Add sources.** Drop PDFs, web clips, notes, or other materials into [`starter-library/raw/`](./starter-library/raw/) and say:
 
