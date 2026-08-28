@@ -8,7 +8,7 @@ a PDF text-extraction helper, and an optional targeted transcript helper.
 This is the reproducible backbone of the [Librarian Protocol](../protocol.md)
 health check. It resolves Markdown links after URL-decoding destinations and
 normalizing Unicode, which catches filename mismatches that visual inspection
-can miss.
+can miss. Links inside fenced code examples are ignored.
 
 ```bash
 python3 tools/check_links.py                     # audit every library

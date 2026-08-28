@@ -1,33 +1,18 @@
 #!/usr/bin/env python3
-"""Lint the knowledge-base link graph.
+"""Lint a Funes knowledge-base link graph.
 
-Reproducible health-check helper for the `kb` repo. Catches the classes of
-breakage the manual audits have missed — over-encoded relative links, links to
-unicode filenames, dangling references — by resolving every markdown link the
-way GitHub and editors actually do.
-
-Audits
-------
-- **links**   (always)   broken relative-path links (the core check)
-- **orphans** (--orphans) concept/source notes with no inbound wiki reference
-- **front**   (--front)   wiki notes missing YAML frontmatter
-
-Why a script: the 2026-05-28 health check declared the link graph "clean" while
-three source notes had broken raw-file links, because the ad-hoc check did not
-URL-decode `%27` (a straight apostrophe) against filenames containing a curly
-apostrophe `’`. This resolver decodes percent-escapes, honours
-`<angle-bracket>` destinations, and only treats a trailing `#fragment` as an
-anchor when the literal path (fragment included) does not exist on disk — so a
-file literally named `...#1 Rule....txt` still resolves.
+Resolve relative Markdown links with URL decoding and Unicode-aware path
+matching, and optionally audit orphaned notes and missing frontmatter. Fenced
+code examples are excluded because their links are illustrative rather than
+repository references.
 
 Usage
 -----
     python3 tools/check_links.py                 # whole repo, links audit
-    python3 tools/check_links.py self-improvement # one library
+    python3 tools/check_links.py starter-library # one library
     python3 tools/check_links.py --orphans --front
 
-Exit code is non-zero if any audit finds problems, so it can gate CI or a
-SessionStart hook.
+Exit code is non-zero if any audit finds problems, so it can gate CI.
 """
 from __future__ import annotations
 
@@ -43,6 +28,7 @@ SKIP_FILES = {"protocol.md", "library.md"}
 
 # `[text](dest)` and `![alt](dest)`, where dest is either <bracketed> or bare.
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(\s*(<[^>]+>|[^)\s]+)")
+FENCE_RE = re.compile(r"^[ \t]{0,3}(`{3,}|~{3,})")
 
 # Notes whose link destinations point at deliberately-absent binaries. The note
 # body documents the absence (e.g. "binary not yet stored"); don't flag these.
@@ -60,8 +46,19 @@ def repo_md_files(root: str) -> list[str]:
 
 
 def iter_links(text: str):
-    """Yield (line_number, raw_destination) for every markdown link."""
+    """Yield links outside fenced code as (line_number, raw_destination)."""
+    fence: tuple[str, int] | None = None
     for i, line in enumerate(text.splitlines(), 1):
+        match = FENCE_RE.match(line)
+        if match:
+            token = match.group(1)
+            if fence is None:
+                fence = (token[0], len(token))
+            elif token[0] == fence[0] and len(token) >= fence[1]:
+                fence = None
+            continue
+        if fence is not None:
+            continue
         for m in LINK_RE.finditer(line):
             yield i, m.group(1).strip()
 
@@ -163,7 +160,7 @@ def _libraries(root: str) -> list[str]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Lint the kb link graph.")
+    ap = argparse.ArgumentParser(description="Lint a Funes link graph.")
     ap.add_argument("root", nargs="?", default=".", help="repo root or a library dir")
     ap.add_argument("--orphans", action="store_true", help="also report orphan notes")
     ap.add_argument("--front", action="store_true", help="also report missing frontmatter")
