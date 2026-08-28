@@ -28,7 +28,9 @@ to confirm, the standard structure, and what a library's `AGENTS.md` must cover.
 
 Use [`tools/check_links.py`](./tools/check_links.py) and
 [`tools/compile_lint.py`](./tools/compile_lint.py) for the mechanical parts of a
-health check. For targeted inspection of a known public YouTube source,
+health check. Use [`tools/pdf_text.py`](./tools/pdf_text.py) to create
+provenance-marked searchable sidecars for PDFs, with OCR only where native text
+is missing or sparse. For targeted inspection of a known public YouTube source,
 [`tools/youtube_transcript.py`](./tools/youtube_transcript.py) can retrieve
 available captions after its optional dependency is installed. See
 [`tools/README.md`](./tools/README.md) for commands, limits, and research

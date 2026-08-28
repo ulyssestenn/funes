@@ -1,7 +1,7 @@
 # Maintenance and research tools
 
-Funes includes two dependency-free Python linters for repository health checks
-and one optional helper for targeted transcript retrieval.
+Funes includes two dependency-free Python linters for repository health checks,
+a PDF text-extraction helper, and an optional targeted transcript helper.
 
 ## `check_links.py` — link-graph lint
 
@@ -50,6 +50,41 @@ that reads the source and compiled note together.
 
 Both linters run in [GitHub Actions](../.github/workflows/funes-lint.yml) on
 every push and pull request.
+
+## `pdf_text.py` — PDF text extraction with OCR fallback
+
+This creates a searchable text edition beside a PDF without modifying the
+authoritative binary. It tries each page's native text layer first, then renders
+and OCRs only pages whose native layer is missing or too sparse.
+
+```bash
+python3 tools/pdf_text.py library/raw/document.pdf
+python3 tools/pdf_text.py library/raw/document.pdf --pages 1-20,35-
+python3 tools/pdf_text.py library/raw/document.pdf --ocr-all --dpi 220
+```
+
+Output defaults to the PDF's path with a `.txt` suffix. Each page is labeled as
+`native text`, `OCR`, or `extraction failed`, and the header records extraction
+settings and tool versions. The default 60-second timeout applies to each
+external command, preventing a pathological page from stalling the entire run.
+Successful pages are still written if another page fails; the command exits
+non-zero when any page failed. Use `--fail-fast` when partial output is unwanted.
+
+The Python wrapper has no package dependencies, but PDF/OCR work uses
+[Poppler](https://poppler.freedesktop.org/) (`pdfinfo`, `pdftotext`,
+`pdftoppm`) and [Tesseract](https://github.com/tesseract-ocr/tesseract):
+
+```bash
+# Ubuntu/Debian
+sudo apt-get install poppler-utils tesseract-ocr
+
+# macOS with Homebrew
+brew install poppler tesseract
+```
+
+OCR is machine-generated. Verify quotations, names, numbers, tables, and other
+critical readings against the PDF page images. Dense schematics and unusual
+layouts often need manual review or different Tesseract `--psm` settings.
 
 ## `youtube_transcript.py` — targeted transcript retrieval
 

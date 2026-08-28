@@ -69,7 +69,7 @@ Rename or copy [`starter-library/`](./starter-library/) to suit your topic, such
 - **[`AGENTS.md`](./AGENTS.md)** — the entry point for agents: what each folder is and how to work in the repo.
 - **[`protocol.md`](./protocol.md)** — the shared Librarian Protocol: the full ingest → compile → Q&A → output → health-check workflow, plus conventions and article templates.
 - **[`library.md`](./library.md)** — the recipe for creating additional libraries in the same repo.
-- **[`tools/`](./tools/README.md)** — link-graph and compile-depth linters, plus an optional targeted YouTube transcript helper.
+- **[`tools/`](./tools/README.md)** — link-graph and compile-depth linters, PDF text extraction with OCR fallback, and an optional targeted YouTube transcript helper.
 - **[`.github/workflows/funes-lint.yml`](./.github/workflows/funes-lint.yml)** — CI gates for mechanical repository health.
 
 ## Example — what the Librarian produces

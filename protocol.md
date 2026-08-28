@@ -40,7 +40,9 @@ text, transcribe the text into a sibling `raw/<slug>.md` (keep the image in
 binary document whose text you extract, save the extracted text as a sibling
 `raw/<slug>.txt` or `raw/<slug>.htm`; if extraction is partial, note the pages it
 covers. Keep the binary as the verbatim original so it never needs re-extraction.
-Add a row to `raw/INDEX.md` (status `raw`); then compile.
+[`tools/pdf_text.py`](./tools/pdf_text.py) can create a provenance-marked text
+sidecar using native extraction with page-level OCR fallback. Add a row to
+`raw/INDEX.md` (status `raw`); then compile.
 
 **Compile (raw → wiki):**
 1. Source note in `wiki/sources/` — summary, key takeaways, link to the raw file.
