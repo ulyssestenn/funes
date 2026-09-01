@@ -19,9 +19,6 @@ structure. Skip any the human has already specified. Offer sensible defaults:
 2. **Link style** — portable **markdown relative links** (clickable on GitHub and
    in any editor, Obsidian-compatible), or Obsidian `[[wikilinks]]`?
    _Default: markdown relative links._
-3. **Tooling** — include lightweight CLI tooling now (e.g. a grep-based search
-   script), or structure + protocol only and add tools later?
-   _Default: structure + protocol only._
 
 ## Step 1 — Scaffold the standard structure
 
@@ -82,6 +79,6 @@ library might add a `snippets/` folder), but the `raw → wiki → outputs` spin
 an `AGENTS.md` are required in every library.
 
 The full workflow, conventions, templates, and operating principles (including the
-default-markdown-links and self-contained / cross-link-on-request rules) live in
+default-markdown-links and self-contained / deliberate-cross-linking rules) live in
 the shared **[Librarian Protocol](./protocol.md)** — don't restate them per
 library.
